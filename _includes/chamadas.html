@@ -1,0 +1,23 @@
+  <table class="journal-table call-table">
+      <thead>
+          <tr><th>Prazo</th><th>Chamada</th><th>Tipo</th><th>Local</th><th>Condições</th></tr>
+      </thead>
+      <tbody>
+    {% for c in include.chamadas reversed %}
+    {% capture deadline_year %}{{ c.submission_date|date: "%Y" }}{% endcapture %}
+    {% comment %} Mesma lógica de conferences.html: mantenha esta ordem para `greaterthan` funcionar. {% endcomment %}
+    {% if deadline_year == include.year or include.greaterthan and deadline_year >= include.year %}
+       <tr>
+           <td data-label="Prazo">{{c.submission_date | date: "%d/%m/%Y"}}</td>
+           <td data-label="Chamada">
+               <span class="conference-table__acronym"><a href="{{c.ext_url}}">{{c.title}}</a></span>
+               <span class="conference-table__title">{{c.organization}}</span>
+           </td>
+           <td data-label="Tipo">{{c.type}}</td>
+           <td data-label="Local">{{c.location}}</td>
+           <td data-label="Condições">{{c.conditions}}</td>
+        </tr>
+    {% endif %}
+    {% endfor %}
+      </tbody>
+  </table>

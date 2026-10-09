@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<div class="home">
+    <p>Chamadas abertas para obras, performances, instalações, residências e outras propostas artísticas
+    ligadas à música, ao som e à tecnologia. Para contribuir, leia as instruções na
+    <a href="{{"/about" | prepend: site.baseurl }}">página Sobre</a>.</p>
+
+  <h1 class="page-heading">Chamadas artísticas</h1>
+
+  {% assign chamadas = site.chamadas | sort: 'submission_date' %}
+  {% include chamadas.html year="2026" chamadas=chamadas greaterthan=true %}
+
+  Anos anteriores:
+  <a href="2025">2025</a>
+
+</div>

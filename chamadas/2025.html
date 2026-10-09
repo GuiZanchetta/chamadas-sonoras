@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Chamadas artísticas 2025</h1>
+  {% assign chamadas = site.chamadas | sort: 'submission_date' %}
+  {% include chamadas.html year="2025" chamadas=chamadas %}
+
+</div>

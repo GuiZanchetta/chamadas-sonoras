@@ -1,12 +1,16 @@
 ---
 layout: page
-title: About
+title: Sobre
 permalink: /about/
 ---
 
-This site lists upcoming conferences and journals relevant to the music
-information retrieval community. It is hosted and maintained by the Music
-Technology Group.
+Este site lista conferências, chamadas de periódicos e chamadas artísticas
+relevantes para a comunidade de tecnologia musical e de recuperação de
+informação musical (MIR), com foco no Brasil e na América Latina.
 
-You can contribute to this list by making changes to the {% include icon-github.html username="mtg" %} / [conferences](https://github.com/mtg/conferences) repository on GitHub.
+Este site é um fork em português do projeto [mtg/conferences](https://github.com/mtg/conferences),
+criado pelo Music Technology Group (MTG UPF), com foco no Brasil e com seções
+adicionais para chamadas artísticas.
 
+Você pode contribuir alterando o repositório {% include icon-github.html username="GuiZanchetta" %} / [chamadas-sonoras](https://github.com/GuiZanchetta/chamadas-sonoras) no GitHub.
+As instruções e os modelos de cada tipo de entrada estão no [README](https://github.com/GuiZanchetta/chamadas-sonoras#readme).

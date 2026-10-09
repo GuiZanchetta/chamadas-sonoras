@@ -14,11 +14,10 @@
       </a>
 
       <div class="trigger">
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-          {% endif %}
-        {% endfor %}
+        <a class="page-link" href="{{ "/" | prepend: site.baseurl }}">Conferências</a>
+        <a class="page-link" href="{{ "/journalcalls/" | prepend: site.baseurl }}">Periódicos</a>
+        <a class="page-link" href="{{ "/chamadas/" | prepend: site.baseurl }}">Chamadas artísticas</a>
+        <a class="page-link" href="{{ "/about/" | prepend: site.baseurl }}">Sobre</a>
       </div>
     </nav>
 

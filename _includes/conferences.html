@@ -1,6 +1,6 @@
   <table class="conference-table">
       <thead>
-          <tr><th>Date</th><th>Conference</th><th>Location</th><th>Submission date</th></tr>
+          <tr><th>Data</th><th>Conferência</th><th>Local</th><th>Prazo de submissão</th></tr>
       </thead>
       <tbody>
     {% for conf in include.confs reversed %}
@@ -9,16 +9,16 @@
        them right-to left. Keep in this order to make `include.greaterthan` work.  {% endcomment %}
     {% if conf_date == include.year or include.greaterthan and conf_date >= include.year%}
        <tr>
-           <td data-label="Date">{{conf.date | date: "%b %-d, %Y"}}</td>
-           <td data-label="Conference">
+           <td data-label="Data">{{conf.date | date: "%d/%m/%Y"}}</td>
+           <td data-label="Conferência">
                {% assign trim_acronym = conf.acronym | strip %}
                {% if trim_acronym != "" %}
                <span class="conference-table__acronym">{{ trim_acronym }}</span>
                {% endif %}
                <span class="conference-table__title"><a href="{{conf.ext_url}}">{{conf.title}}</a></span>
            </td>
-           <td data-label="Location">{{conf.location}}</td>
-           <td data-label="Submission date">{{conf.submission_date | date: "%b %-d, %Y"}}</td>
+           <td data-label="Local">{{conf.location}}</td>
+           <td data-label="Prazo de submissão">{{conf.submission_date | date: "%d/%m/%Y"}}</td>
         </tr>
         {% endif %}
     {% endfor %}

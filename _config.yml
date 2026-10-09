@@ -1,16 +1,16 @@
 # Welcome to Jekyll!
 
 # Site settings
-title: Music Technology conference list
+title: Lista de conferências de tecnologia musical
 description: > # this means to ignore newlines until "baseurl:"
-  A list of upcoming conferences and journal calls for the music technology community.
-baseurl: "/conferences" # the subpath of your site, e.g. /blog
-url: "https://mtg.github.io/conferences/" # the base hostname & protocol for your site
-twitter_username: mtg_upf
-github_username:  mtg
+  Lista de conferências, chamadas de periódicos e chamadas artísticas para a comunidade de tecnologia musical.
+baseurl: "/chamadas-sonoras" # the subpath of your site, e.g. /blog
+url: "https://guizanchetta.github.io" # the base hostname & protocol for your site
+github_username:  GuiZanchetta
 
 # Build settings
 markdown: kramdown
 collections:
  - conferences
  - journals
+ - chamadas

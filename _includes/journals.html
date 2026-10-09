@@ -1,7 +1,7 @@
 
   <table class="journal-table">
       <thead>
-          <tr><th>Journal</th><th>Special issue</th><th>Submission date</th></tr>
+          <tr><th>Periódico</th><th>Edição especial</th><th>Prazo de submissão</th></tr>
       </thead>
       <tbody>
     {% for j in include.journals reversed %}
@@ -10,9 +10,9 @@
        them right-to left. Keep in this order to make `include.greaterthan` work.  {% endcomment %}
     {% if submission_date == include.year or include.greaterthan and submission_date >= include.year %}
        <tr>
-           <td data-label="Journal">{{j.journal}}</td>
-           <td data-label="Special issue"><a href="{{j.ext_url}}">{{j.issue}}</a></td>
-           <td data-label="Submission date">{{j.submission_date | date: "%b %-d, %Y" }}</td>
+           <td data-label="Periódico">{{j.journal}}</td>
+           <td data-label="Edição especial"><a href="{{j.ext_url}}">{{j.issue}}</a></td>
+           <td data-label="Prazo de submissão">{{j.submission_date | date: "%d/%m/%Y" }}</td>
         </tr>
     {% endif %}
     {% endfor %}

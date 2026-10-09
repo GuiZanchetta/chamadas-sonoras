@@ -3,15 +3,15 @@ layout: default
 ---
 
 <div class="home">
-    <p>This is a list of upcoming journal calls for the music technology community.
-    To contribute to this list, see the instructions in the <a href="{{"/about" | prepend: site.baseurl }}">about page</a>.</p>
+    <p>Lista de chamadas abertas de periódicos (edições especiais) para a comunidade de tecnologia musical.
+    Para contribuir, leia as instruções na <a href="{{"/about" | prepend: site.baseurl }}">página Sobre</a>.</p>
 
-  <h1 class="page-heading">Journal calls</h1>
+  <h1 class="page-heading">Chamadas de periódicos</h1>
 
   {% assign journals = site.journals | sort: 'submission_date' %}
   {% include journals.html year="2026" journals=journals greaterthan=true %}
 
-  Previous years
+  Anos anteriores
   <a href="2008">2008</a>
   <a href="2009">2009</a>
   <a href="2010">2010</a>

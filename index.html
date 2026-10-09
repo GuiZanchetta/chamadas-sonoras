@@ -4,16 +4,18 @@ layout: default
 
 <div class="home">
 
-    <p>This is a list of upcoming conferences for the music technology community.
-    For a list of journals, see <a href="journalcalls">Journal calls</a>.
-    To contribute to this list, see the instructions in the <a href="{{"/about" | prepend: site.baseurl }}">about page</a>.</p>
+    <p>Lista de próximas conferências para a comunidade de tecnologia musical.
+    Veja também as chamadas de <a href="{{"/journalcalls/" | prepend: site.baseurl }}">periódicos</a> e as
+    <a href="{{"/chamadas/" | prepend: site.baseurl }}">chamadas artísticas</a>.
+    Para contribuir, leia as instruções na <a href="{{"/about" | prepend: site.baseurl }}">página Sobre</a>.</p>
 
-  <h1 class="page-heading">Conferences</h1>
+  <h1 class="page-heading">Conferências</h1>
 
   {% assign confs = site.conferences | sort: 'submission_date' %}
   {% include conferences.html year="2026" confs=confs greaterthan=true %}
 
 
+  Anos anteriores:
   <a href="2008">2008</a>
   <a href="2009">2009</a>
   <a href="2010">2010</a>
