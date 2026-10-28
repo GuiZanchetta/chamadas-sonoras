@@ -9,7 +9,8 @@
   label.innerHTML =
     '<input type="checkbox" role="switch" id="deadline-switch">' +
     '<span class="deadline-switch__track" aria-hidden="true"></span>' +
-    '<span class="deadline-switch__text">Mostrar apenas prazos de submissão em aberto</span>';
+    '<span class="deadline-switch__text">Mostrar apenas prazos de submissão em aberto</span>' +
+    '<span class="deadline-switch__count"></span>';
   table.parentNode.insertBefore(label, table);
   var input = label.querySelector('input');
 
@@ -18,11 +19,17 @@
     String(now.getMonth() + 1).padStart(2, '0') + '-' +
     String(now.getDate()).padStart(2, '0');
 
+  var count = label.querySelector('.deadline-switch__count');
+
   function apply() {
+    var shown = 0;
     for (var i = 0; i < rows.length; i++) {
       var past = rows[i].getAttribute('data-deadline') < today;
-      rows[i].classList.toggle('is-past-hidden', input.checked && past);
+      var hide = input.checked && past;
+      rows[i].classList.toggle('is-past-hidden', hide);
+      if (!hide) shown++;
     }
+    count.textContent = '(' + shown + ' de ' + rows.length + ')';
   }
 
   try { input.checked = localStorage.getItem('apenas-prazos-abertos') === '1'; } catch (e) {}

@@ -459,6 +459,10 @@
         }
     }
 
+    &__count {
+        color: $grey-color-dark;
+    }
+
     input:checked + &__track {
         background-color: $brand-color;
 
