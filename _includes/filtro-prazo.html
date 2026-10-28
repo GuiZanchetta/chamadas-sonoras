@@ -1,0 +1,35 @@
+<script>
+(function () {
+  var rows = document.querySelectorAll('tr[data-deadline]');
+  if (!rows.length) return;
+
+  var table = rows[0].closest('table');
+  var label = document.createElement('label');
+  label.className = 'deadline-switch';
+  label.innerHTML =
+    '<input type="checkbox" role="switch" id="deadline-switch">' +
+    '<span class="deadline-switch__track" aria-hidden="true"></span>' +
+    '<span class="deadline-switch__text">Mostrar apenas prazos de submissão em aberto</span>';
+  table.parentNode.insertBefore(label, table);
+  var input = label.querySelector('input');
+
+  var now = new Date();
+  var today = now.getFullYear() + '-' +
+    String(now.getMonth() + 1).padStart(2, '0') + '-' +
+    String(now.getDate()).padStart(2, '0');
+
+  function apply() {
+    for (var i = 0; i < rows.length; i++) {
+      var past = rows[i].getAttribute('data-deadline') < today;
+      rows[i].classList.toggle('is-past-hidden', input.checked && past);
+    }
+  }
+
+  try { input.checked = localStorage.getItem('apenas-prazos-abertos') === '1'; } catch (e) {}
+  input.addEventListener('change', function () {
+    try { localStorage.setItem('apenas-prazos-abertos', input.checked ? '1' : '0'); } catch (e) {}
+    apply();
+  });
+  apply();
+})();
+</script>

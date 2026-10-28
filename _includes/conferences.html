@@ -8,7 +8,7 @@
     {% comment %} Liquid doesn't have parenthesis to force order in `if` blocks, and evaluates
        them right-to left. Keep in this order to make `include.greaterthan` work.  {% endcomment %}
     {% if conf_date == include.year or include.greaterthan and conf_date >= include.year%}
-       <tr>
+       <tr data-deadline="{{ conf.submission_date | date: "%Y-%m-%d" }}">
            <td data-label="Data">{{conf.date | date: "%d/%m/%Y"}}</td>
            <td data-label="Conferência">
                {% assign trim_acronym = conf.acronym | strip %}

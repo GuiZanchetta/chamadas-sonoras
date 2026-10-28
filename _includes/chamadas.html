@@ -7,7 +7,7 @@
     {% capture deadline_year %}{{ c.submission_date|date: "%Y" }}{% endcapture %}
     {% comment %} Mesma lógica de conferences.html: mantenha esta ordem para `greaterthan` funcionar. {% endcomment %}
     {% if deadline_year == include.year or include.greaterthan and deadline_year >= include.year %}
-       <tr>
+       <tr data-deadline="{{ c.submission_date | date: "%Y-%m-%d" }}">
            <td data-label="Prazo">{{c.submission_date | date: "%d/%m/%Y"}}</td>
            <td data-label="Chamada">
                <span class="conference-table__acronym"><a href="{{c.ext_url}}">{{c.title}}</a></span>
